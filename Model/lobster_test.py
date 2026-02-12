@@ -11,8 +11,8 @@ class LobsterDataset(Dataset):
         # --- 1. Robust Loading Logic ---
         import os
         if not os.path.exists(orderbook_file):
-            print(f"⚠️ FILE NOT FOUND: {orderbook_file}")
-            print(">> Generating REALISTIC Dummy Data (Random Walk)...")
+            print(f"FILE NOT FOUND: {orderbook_file}")
+            print("Generating REALISTIC Dummy Data (Random Walk)...")
             
             # FIX: Use Random Walk (cumsum), not random noise
             # Generate 10,000 steps of log-returns
