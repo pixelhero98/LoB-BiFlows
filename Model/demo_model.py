@@ -2,9 +2,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-
+from scipy.optimize import linear_sum_assignment
 
 class BiFlowLOB(nn.Module):
     def __init__(self, config):
@@ -29,13 +27,6 @@ class BiFlowLOB(nn.Module):
         t = torch.zeros(x.shape[0], 1).to(x.device)
         v = net(torch.cat([x, t, context], dim=1))
         return x + v * dt
-
-    import torch
-import torch.nn as nn
-from scipy.optimize import linear_sum_assignment # For Optimal Transport
-
-class BiFlowLOB(nn.Module):
-    # ... (Init remains the same) ...
 
     def compute_loss(self, x_real, history):
         context = self.context_encoder(history)
