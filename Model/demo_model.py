@@ -21,10 +21,7 @@ Decoding uses exp() to guarantee positivity and enforces price ladder ordering.
 
 Notes
 -----
-- This is a minimal, hackable baseline that is conference-paper friendly:
-  it has a clean validity story + can be trained on FI-2010 or ABIDES output.
-- The flow model is a rectified-flow / flow-matching style model.
-
+- The model is a rectified-flow / flow-matching style model.
 """
 
 from __future__ import annotations
